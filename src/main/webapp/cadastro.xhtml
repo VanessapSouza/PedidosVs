@@ -23,6 +23,9 @@
                     <p:outputLabel>Nome: </p:outputLabel>
                     <p:inputText id="nome" required="true" value="#{cadastrarProdutoBean.produto.nome}"/>
                     
+                     <p:outputLabel>Vendedor: </p:outputLabel>
+                     <p:inputText required="true" value="#{cadastrarProdutoBean.produto.vendedor}"/>
+                    
                      <p:outputLabel>Categoria: </p:outputLabel>
                      <p:inputText required="true" value="#{cadastrarProdutoBean.produto.categoria}"/>
                     
@@ -36,8 +39,12 @@
                     <p:inputNumber value="#{cadastrarProdutoBean.produto.preco}"/>
 
                 </p:panelGrid>
-                <center><p:commandButton value="Cadastrar" action="#{cadastrarProdutoBean.adicionar()}" style="width: 230px !important;"/>
-                <p:commandButton value="Limpar campos" type="reset" style="width: 230px !important;"/></center>
+                <center>
+                    <p:commandButton value="Cadastrar" action="#{cadastrarProdutoBean.adicionar()}" style="width: 230px !important;"/>
+                    <p:commandButton value="Limpar campos" type="reset" style="width: 230px !important;"/>
+                    <p:commandButton value="Finalizar pedido" action="listarProdutosBean.xhtml"/>
+                </center>
+                
             </h:form>
         </div>
         <footer id="footer">

@@ -12,7 +12,7 @@ import javax.inject.Named;
 
 /**
  *
- * @author JeanJunior
+ * @author Vanessa
  */
 @Named
 @SessionScoped

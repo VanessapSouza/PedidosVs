@@ -26,6 +26,11 @@ public class Produto implements Serializable {
     private String categoria;
     private int quantidade;
     private double preco;
+    private String vendedor;
+
+    public String getVendedor() {
+        return vendedor;
+    }
 
     /**
      * @return the id
@@ -60,6 +65,10 @@ public class Produto implements Serializable {
      */
     public String getDescricao() {
         return descricao;
+    }
+
+    public void setVendedor(String vendedor) {
+        this.vendedor = vendedor;
     }
 
     /**
