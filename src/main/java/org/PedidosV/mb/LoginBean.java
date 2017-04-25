@@ -16,7 +16,7 @@ import org.PedidosV.modelo.Usuario;
 
 /**
  *
- * @author JeanJunior
+ * @author Vanessa
  */
 @Named
 @RequestScoped
