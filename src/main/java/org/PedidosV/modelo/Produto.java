@@ -5,16 +5,27 @@
  */
 package org.PedidosV.modelo;
 
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  *
- * @author Vanessa_2
+ * @author Vanessa
  */
-public class Produto {
-   private int id;
-   private String nome;
-   private String categoria;
-   private int quantidade;
-   private double preco;
+@Entity
+public class Produto implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    private String nome;
+    private String descricao;
+    private String categoria;
+    private int quantidade;
+    private double preco;
 
     /**
      * @return the id
@@ -42,6 +53,20 @@ public class Produto {
      */
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    /**
+     * @return the descricao
+     */
+    public String getDescricao() {
+        return descricao;
+    }
+
+    /**
+     * @param descricao the descricao to set
+     */
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
     /**
@@ -88,7 +113,6 @@ public class Produto {
 
     @Override
     public String toString() {
-        return "Produto{" + "id=" + id + ", nome=" + nome + ", categoria=" + categoria + ", quantidade=" + quantidade + ", preco=" + preco + '}';
+        return "Produto{" + "id=" + id + ", nome=" + nome + ", Descrição=" + descricao + ", quantidade=" + quantidade + ", preco=" + preco + '}';
     }
-    
 }

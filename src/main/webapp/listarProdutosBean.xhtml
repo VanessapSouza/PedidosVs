@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"  
+      xmlns:h="http://java.sun.com/jsf/html"  
+      xmlns:f="http://java.sun.com/jsf/core"  
+      xmlns:p="http://primefaces.org/ui"> 
+    <h:head>
+                <title>Produtos</title>
+        <!--<link rel="stylesheet" type="text/css" href="css/estilo.css"/>-->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+        <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+    </h:head>
+    <h:body>
+        <h:form id="form">
+            <p:growl id="msgs" showDetail="true" />
+            <p:dataTable id="dtContratantes" var="produtos" value="#{ListarProdutos.produtos}">
+                <f:facet name="header">
+                    <p:outputPanel>
+                        <h:outputText value="Produtos:" />
+                    </p:outputPanel>
+                </f:facet>
+
+                <p:column headerText="ID" width="10">
+                    <h:outputText value="#{produtos.id}"/>
+                </p:column>
+                <p:column headerText="Nome" sortBy="#{produtos.nome}" width="150"
+                          filterBy="#{produtos.nome}" filterMatchMode="contains">
+                    <h:outputText value="#{produtos.nome}"/>
+                </p:column>
+
+                <p:column headerText="Categoria" width="30">
+                    <h:outputText value="#{produtos.categoria}"/>
+                </p:column>
+                     <p:column headerText="Descrição" width="30">
+                     <h:outputText value="#{produtos.descricao}"/>
+                </p:column>
+                <p:column headerText="Quantidade" width="30">
+                    <h:outputText value="#{produtos.quantidade}"/>
+                </p:column>
+
+                <p:column headerText="Preço unt." width="30">
+                    <h:outputText value="#{produtos.preco}"/>
+                </p:column>
+                <f:facet name="footer">
+                    No total temos #{ListarProdutos.produtos.size()} Produtos.
+                </f:facet>
+            </p:dataTable>
+            <center><p:commandButton value="Voltar a pagina inicial" action="template.xhtml" /></center>
+        </h:form>
+    </h:body>
+</html>
